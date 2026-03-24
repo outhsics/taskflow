@@ -1,0 +1,28 @@
+import { useState, useEffect } from 'react';
+
+/**
+ * Hook to track online/offline status
+ */
+export function useOffline(): boolean {
+  const [isOffline, setIsOffline] = useState(!navigator.onLine);
+
+  useEffect(() => {
+    function handleOnline() {
+      setIsOffline(false);
+    }
+
+    function handleOffline() {
+      setIsOffline(true);
+    }
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  return isOffline;
+}

@@ -1,0 +1,15 @@
+.task-list {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.task-list-loading,
+.task-list-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: var(--text-secondary);
+  text-align: center;
+}
