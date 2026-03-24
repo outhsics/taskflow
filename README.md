@@ -2,6 +2,14 @@
 
 AI-Powered Personal Task Manager - A local-first task management application with intelligent suggestions.
 
+## 🚀 Live Demo
+
+**[https://outhsics.github.io/taskflow/](https://outhsics.github.io/taskflow/)**
+
+> **Note**: If the link doesn't work, GitHub Pages needs to be enabled in repository settings:
+> 1. Go to repository Settings → Pages
+> 2. Set Source to "GitHub Actions"
+
 ## Features
 
 - **Task Management**: Create, edit, delete, and complete tasks
