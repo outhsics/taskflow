@@ -2,6 +2,7 @@ import Dexie, { Table } from 'dexie';
 import { Task, Category, AppSettings, SchemaMetadata } from '@/types';
 
 export const DB_VERSION = 1;
+export const SCHEMA_KEY = 1; // Use number as key for metadata table
 
 export class TaskFlowDatabase extends Dexie {
   tasks!: Table<Task, string>;
@@ -17,15 +18,12 @@ export class TaskFlowDatabase extends Dexie {
       tasks: 'id, categoryId, completed, priority, dueDate, createdAt, nextOccurrence',
       categories: 'id, name',
       settings: 'id',
-      metadata: 'version',
+      metadata: '++version',
     });
   }
 }
 
 export const db = new TaskFlowDatabase();
-
-// Database schema version metadata
-export const SCHEMA_KEY = 'schema_metadata';
 
 // Helper to get/set schema version
 export async function getSchemaVersion(): Promise<number> {
@@ -35,7 +33,7 @@ export async function getSchemaVersion(): Promise<number> {
 
 export async function setSchemaVersion(version: number, migrationName?: string): Promise<void> {
   await db.metadata.put({
-    version: SCHEMA_KEY,
+    key: SCHEMA_KEY,
     version: version,
     lastMigration: migrationName ? new Date().toISOString() : undefined,
   });

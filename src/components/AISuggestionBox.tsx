@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { settingsRepository } from '@/repositories';
+import { settingsRepository } from '@/repositories/SettingsRepository';
 import { AISuggestion } from '@/types';
 import './AISuggestionBox.css';
 

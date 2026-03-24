@@ -1,6 +1,5 @@
 import { db } from './db';
 import { AppSettings, AppSettingsSchema } from '@/types';
-import { v4 as uuidv4 } from 'uuid';
 
 const SETTINGS_ID = 'app-settings';
 const ENCRYPTED_KEY_STORAGE = 'encrypted_api_key';

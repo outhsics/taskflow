@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { settingsRepository } from '@/repositories';
+import { settingsRepository } from '@/repositories/SettingsRepository';
 
 type Theme = 'light' | 'dark';
 

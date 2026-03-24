@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { taskRepository, categoryRepository } from '@/repositories';
+import { taskRepository } from '@/repositories/TaskRepository';
+import { categoryRepository } from '@/repositories/CategoryRepository';
 import { TaskPriority } from '@/types';
-import { v4 as uuidv4 } from 'uuid';
 import './AddTaskForm.css';
 
 export function AddTaskForm() {

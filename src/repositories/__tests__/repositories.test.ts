@@ -1,9 +1,9 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { TaskRepository } from '@/repositories/TaskRepository';
-import { CategoryRepository } from '@/repositories/CategoryRepository';
-import { SettingsRepository } from '@/repositories/SettingsRepository';
-import { db } from '@/repositories/db';
-import { Task, TaskPriority } from '@/types';
+import { TaskRepository } from '../../TaskRepository';
+import { CategoryRepository } from '../../CategoryRepository';
+import { SettingsRepository } from '../../SettingsRepository';
+import { db } from '../../db';
+import { Task, TaskPriority } from '../../types';
 
 describe('TaskRepository', () => {
   let taskRepo: TaskRepository;

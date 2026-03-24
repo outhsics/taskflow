@@ -52,6 +52,7 @@ export interface AppSettings {
 
 // Schema version for migrations
 export interface SchemaMetadata {
+  key: number;
   version: number;
   lastMigration?: string; // ISO timestamp
 }
